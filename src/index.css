@@ -1,0 +1,533 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #222;
+    color: #fff;
+}
+
+.push-btn {
+    position: relative;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    border: solid 1px #2C6961;
+    background: #2C6961;
+    text-align: center;
+    transition: all 0.1s;
+    box-shadow: 0px 6px 0px #2C5852;
+}
+
+.push-btn:active {
+    box-shadow: 0px 2px 0px #2C5852;
+    position: relative;
+    top: 4px;
+}
+
+.chart-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.055);
+}
+
+.base {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: skew(45deg);
+}
+
+.bar-container {
+    width: 20px;
+    margin: 0 25px;
+}
+
+.bar {
+    float: left;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    height: 75%;
+    width: 40px;
+}
+
+.bar:before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    bottom: 7px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+}
+
+.bar:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -8px;
+    width: 40px;
+    height: 15px;
+    transform: skewX(45deg);
+}
+
+.bar-idle {
+    background-color: rgba(40, 214, 192, 0.35);
+}
+.bar-idle:before {
+    background-color: rgba(40, 214, 192, 0.25);
+}
+.bar-idle:after {
+    background-color: rgba(40, 214, 192, 0.45);
+}
+
+.bar-selected {
+    background-color: rgba(254, 31, 78, 0.35);
+}
+.bar-selected:before {
+    background-color: rgba(254, 31, 78, 0.25);
+}
+.bar-selected:after {
+    background-color: rgba(254, 31, 78, 0.45);
+}
+
+@media screen and (max-width: 770px) {
+    .bar-container {
+        margin: 0 15px;
+        transform: scaleX(0.6);
+    }
+
+    .bar-container p {
+        transform: scaleY(0.6);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .chart-container {
+        height: 200px;
+    }
+    
+    .bar-container {
+        margin: 0 3px;
+        transform: scaleX(0.4)
+    }
+
+    .bar-container p {
+        transform: scaleY(0.4);
+    }
+} */
+/* 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin:0;
+    padding:0;
+}
+body {
+    background: #000;
+    color: #d8b4fe;
+}
+
+.push-btn {
+    position: relative;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    border: solid 1px #4c1d95;
+    background: #4c1d95;
+    text-align: center;
+    transition: all 0.1s;
+    box-shadow: 0px 6px 0px #3b0764;
+}
+
+.push-btn:active {
+    box-shadow: 0px 2px 0px #3b0764;
+    position: relative;
+    top: 4px;
+}
+
+.chart-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(147, 51, 234, 0.1);
+}
+
+.base {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(147, 51, 234, 0.2);
+    transform: skew(45deg);
+}
+
+.bar-container {
+    width: 20px;
+    margin: 0 25px;
+}
+
+.bar {
+    float: left;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    height: 75%;
+    width: 40px;
+}
+
+.bar:before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    bottom: 7px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+}
+
+.bar:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -8px;
+    width: 40px;
+    height: 15px;
+    transform: skewX(45deg);
+}
+
+.bar-idle {
+    background-color: rgba(147, 51, 234, 0.35);
+}
+.bar-idle:before {
+    background-color: rgba(147, 51, 234, 0.25);
+}
+.bar-idle:after {
+    background-color: rgba(147, 51, 234, 0.45);
+}
+
+.bar-selected {
+    background-color: rgba(216, 180, 254, 0.35);
+}
+.bar-selected:before {
+    background-color: rgba(216, 180, 254, 0.25);
+}
+.bar-selected:after {
+    background-color: rgba(216, 180, 254, 0.45);
+}
+
+@media screen and (max-width: 770px) {
+    .bar-container {
+        margin: 0 15px;
+        transform: scaleX(0.6);
+    }
+
+    .bar-container p {
+        transform: scaleY(0.6);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .chart-container {
+        height: 200px;
+    }
+    
+    .bar-container {
+        margin: 0 3px;
+        transform: scaleX(0.4)
+    }
+
+    .bar-container p {
+        transform: scaleY(0.4);
+    }
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Main container */
+.sort-visualizer {
+    @apply  text-purple-100 min-h-screen flex flex-col;
+    background-color: #393939;
+}
+
+/* Navigation */
+.sort-visualizer__nav {
+    @apply bg-purple-950 p-4 shadow-lg;
+}
+
+.sort-visualizer__title {
+    @apply text-2xl font-bold text-purple-200;
+}
+
+.sort-visualizer__about {
+    @apply text-purple-300 hover:text-purple-100 transition-colors;
+}
+
+/* Content container */
+.sort-visualizer__content {
+    @apply container mx-auto mt-8 flex flex-col items-center px-4;
+    background-color: rgba(197, 104, 255, 0.164);
+    padding-top: 12px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+/* Algorithm buttons */
+.sort-visualizer__algorithm-buttons {
+    @apply flex flex-wrap justify-center gap-3 mb-6;
+}
+
+.sort-visualizer__algorithm-button {
+    @apply bg-purple-700 text-purple-100 px-5 py-3 rounded-full transition-all shadow-md;
+}
+
+.sort-visualizer__algorithm-button:hover {
+    @apply bg-purple-600;
+}
+
+.sort-visualizer__algorithm-button--active {
+    @apply bg-purple-500 shadow-inner;
+}
+
+/* Chart container */
+.sort-visualizer__chart-container {
+    @apply max-w-3xl w-full bg-purple-950 rounded-lg shadow-xl p-6;
+}
+
+.sort-visualizer__chart {
+    @apply mb-4 rounded-md overflow-hidden;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(147, 51, 234, 0.1);
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.sort-visualizer__chart-base {
+    background-color: rgba(147, 51, 234, 0.2);
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* Bars */
+.sort-visualizer__bar-container {
+    position: relative;
+    width: 50px;
+    margin: 0 10px;
+}
+
+.sort-visualizer__bar {
+    background-color: rgba(167, 139, 250, 0.7);
+    width: 40px;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border-radius: 5px;
+}
+
+.sort-visualizer__bar:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+}
+
+.sort-visualizer__bar:before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    bottom: 7px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+}
+
+.sort-visualizer__bar:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -8px;
+    width: 40px;
+    height: 15px;
+    transform: skewX(45deg);
+}
+
+.sort-visualizer__bar--idle {
+    background-color: rgba(139, 228, 250, 0.6);
+}
+
+/* .sort-visualizer__bar--idle:before {
+    background-color: rgba(167, 139, 250, 0.4);
+}
+
+.sort-visualizer__bar--idle:after {
+    background-color: rgba(167, 139, 250, 0.8);
+} */
+
+.sort-visualizer__bar--selected {
+    background-color: rgba(255, 209, 145, 0.7);
+    animation: bounce 0.5s infinite;
+}
+
+/* .sort-visualizer__bar--selected:before {
+    background-color: rgba(236, 72, 153, 0.4);
+}
+
+.sort-visualizer__bar--selected:after {
+    background-color: rgba(236, 72, 153, 0.8);
+} */
+
+.sort-visualizer__bar-value {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #D1D5DB; /* Light purple/gray for visibility */
+}
+
+/* Controls */
+.sort-visualizer__controls {
+    @apply flex items-center gap-4 max-w-3xl mb-8;
+}
+
+.sort-visualizer__start-button {
+    @apply px-6 py-3 text-purple-100 disabled:opacity-50 rounded-full;
+    position: relative;
+    display: inline-block;
+    border: solid 1px #6b21a8;
+    background: linear-gradient(to bottom, #8b5cf6, #6d28d9);
+    text-align: center;
+    transition: all 0.1s;
+    box-shadow: 0px 6px 0px #4c1d95;
+}
+
+.sort-visualizer__start-button:active {
+    box-shadow: 0px 2px 0px #4c1d95;
+    position: relative;
+    top: 4px;
+}
+
+.sort-visualizer__new-array-button {
+    @apply px-6 py-3 bg-purple-700 hover:bg-purple-600 text-purple-100 disabled:opacity-50 transition-colors rounded-full shadow-md;
+}
+
+.sort-visualizer__speed-select {
+    @apply ml-auto bg-purple-700 px-4 py-2 rounded-full cursor-pointer outline-none focus:ring ring-purple-400 disabled:opacity-50 disabled:cursor-default text-purple-100;
+}
+
+.sort-visualizer__divider {
+    @apply w-full h-0.5 bg-purple-700 mb-6;
+}
+
+/* Table */
+.sort-visualizer__table-container {
+    @apply overflow-auto bg-purple-900 rounded-lg shadow-inner;
+}
+
+.sort-visualizer__table {
+    @apply w-full text-left;
+}
+
+.sort-visualizer__table-header {
+    @apply bg-purple-800;
+}
+
+.sort-visualizer__table-header-cell {
+    @apply px-4 py-2 border-r border-purple-700;
+}
+
+.sort-visualizer__table-subheader {
+    @apply bg-purple-800 border-b border-purple-700;
+}
+
+.sort-visualizer__table-subheader-cell {
+    @apply px-4 py-2;
+}
+
+.sort-visualizer__table-row {
+    @apply hover:bg-purple-800 transition-colors;
+}
+
+.sort-visualizer__table-cell {
+    @apply px-4 py-2;
+}
+
+.sort-visualizer__complexity-tag {
+    @apply px-2 py-1 rounded-full text-xs font-medium;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 770px) {
+    .sort-visualizer__bar-container {
+        margin: 0 15px;
+        transform: scaleX(0.6);
+    }
+
+    .sort-visualizer__bar-value {
+        transform: scaleY(0.6);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sort-visualizer__chart {
+        height: 200px;
+    }
+    
+    .sort-visualizer__bar-container {
+        margin: 0 3px;
+        transform: scaleX(0.4);
+    }
+
+    .sort-visualizer__bar-value {
+        transform: scaleY(0.4);
+    }
+}
+
+/* Custom animation for sorting visualization */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+        border: 2px solid transparent;
+        background-color: #ff69b4; /* Hotpink */
+      }
+      25% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 105, 180, 0.8), 0 0 30px rgba(255, 20, 147, 0.5);
+        border: 2px solid #ff1493; /* DeepPink */
+        background-color: #ff69b4; /* Hotpink */
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(252, 205, 244, 0.8), 0 0 50px rgba(255, 105, 180, 0.5);
+        border: 2px solid #ff14c0; /* DeepPink */
+        background-color: #ff14bc; /* DeepPink */
+      }
+      75% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(226, 182, 255, 0.8), 0 0 30px rgba(255, 20, 147, 0.5);
+        border: 2px solid #ff69da; /* Hotpink */
+        background-color: #ff69f5; /* Hotpink */
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: none;
+        border: 2px solid transparent;
+        background-color: #ff69be; /* Back to Hotpink */
+      }
+  }
